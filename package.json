@@ -4,10 +4,13 @@
   "description": "Welcome to the **TPO Portal Management** repository, a centralized web application designed to streamline the campus placement process. This repository contains the source code, documentation, and essential resources for deploying and managing the TPO Portal.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon backend/index.js",
+    "dev": "node backend/index.js",
     "start": "  node backend/index.js ",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
 }
