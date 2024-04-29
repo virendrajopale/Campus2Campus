@@ -3,10 +3,11 @@ const connecToMongo=require('./db');
 const express=require('express');
 const cors=require('cors');
 
+
 //connect to mongoose
 const mongoURL=process.env.MONGOURL;
 connecToMongo(mongoURL);
-
+app.use(express.static(path.join(__dirname,"../frontend/build")))
 const PORT=process.env.PORT;
 var app=express();
 app.use(express.json());
