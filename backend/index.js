@@ -10,14 +10,17 @@ connecToMongo(mongoURL);
 
 const PORT=process.env.PORT;
 var app=express();
-app.use(express.static(path.join(__dirname,"../frontend/build")))
+
 app.use(express.json());
 app.use(cors());
 app.use('/user',require('./Routes/User'));
 app.use('/Student',require('./Routes/UserstuRoute'));
 app.use('/Drive',require('./Routes/Drive'));
 app.use('/PlacementStat',require('./Routes/PlacementStat'));
-
+app.use(express.static(path.join(__dirname,"../frontend/build")))
+app.get("*",(req,res)=>{
+    res.sendFile(path.resolve(__dirname,"../frontend/build/index.html"))
+})
 app.listen(PORT,()=>{
     console.log(`App listening on port ${PORT}`);
 })
